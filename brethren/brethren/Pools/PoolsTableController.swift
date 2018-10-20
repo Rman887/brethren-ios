@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  brethren
 //
 //  Created by Arman Siddique on 10/20/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FirstViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
