@@ -13,6 +13,7 @@
 		C24AA7C7217BAAC7002B6FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24AA7C5217BAAC7002B6FF8 /* Main.storyboard */; };
 		C24AA7C9217BAAC8002B6FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24AA7C8217BAAC8002B6FF8 /* Assets.xcassets */; };
 		C24AA7CC217BAAC8002B6FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24AA7CA217BAAC8002B6FF8 /* LaunchScreen.storyboard */; };
+		C24AA7D9217BB520002B6FF8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7D8217BB520002B6FF8 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		C24AA7CB217BAAC8002B6FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C24AA7CD217BAAC8002B6FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C24AA7D3217BAD3E002B6FF8 /* brethren.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = brethren.entitlements; sourceTree = "<group>"; };
+		C24AA7D8217BB520002B6FF8 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		C24AA7BE217BAAC7002B6FF8 /* brethren */ = {
 			isa = PBXGroup;
 			children = (
+				C24AA7D7217BB4E0002B6FF8 /* Login */,
 				C24AA7D3217BAD3E002B6FF8 /* brethren.entitlements */,
 				C24AA7BF217BAAC7002B6FF8 /* AppDelegate.swift */,
 				C24AA7C1217BAAC7002B6FF8 /* FirstViewController.swift */,
@@ -75,6 +78,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C24AA7D7217BB4E0002B6FF8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C24AA7D8217BB520002B6FF8 /* LoginController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C24AA7C4217BAAC7002B6FF8 /* SecondViewController.swift in Sources */,
+				C24AA7D9217BB520002B6FF8 /* LoginController.swift in Sources */,
 				C24AA7C0217BAAC7002B6FF8 /* AppDelegate.swift in Sources */,
 				C24AA7C2217BAAC7002B6FF8 /* FirstViewController.swift in Sources */,
 			);
