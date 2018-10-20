@@ -20,6 +20,8 @@
 		C24AA7E6217BCB8A002B6FF8 /* CreatePoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7E5217BCB8A002B6FF8 /* CreatePoolController.swift */; };
 		C24AA7E9217BCD91002B6FF8 /* PoolDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7E8217BCD91002B6FF8 /* PoolDetailsController.swift */; };
 		C24AA7EC217BD05C002B6FF8 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7EB217BD05C002B6FF8 /* Http.swift */; };
+		C24AA7EF217BEE57002B6FF8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7EE217BEE57002B6FF8 /* User.swift */; };
+		C24AA7F1217BEFDA002B6FF8 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F0217BEFDA002B6FF8 /* Pool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		C24AA7E5217BCB8A002B6FF8 /* CreatePoolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePoolController.swift; sourceTree = "<group>"; };
 		C24AA7E8217BCD91002B6FF8 /* PoolDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDetailsController.swift; sourceTree = "<group>"; };
 		C24AA7EB217BD05C002B6FF8 /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
+		C24AA7EE217BEE57002B6FF8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C24AA7F0217BEFDA002B6FF8 /* Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,16 +76,17 @@
 		C24AA7BE217BAAC7002B6FF8 /* brethren */ = {
 			isa = PBXGroup;
 			children = (
-				C24AA7EA217BCFF0002B6FF8 /* Util */,
 				C24AA7D7217BB4E0002B6FF8 /* Login */,
 				C24AA7DA217BB8AD002B6FF8 /* Pools */,
+				C24AA7ED217BEE2F002B6FF8 /* Models */,
 				C24AA7E1217BC76B002B6FF8 /* Settings */,
-				C24AA7D3217BAD3E002B6FF8 /* brethren.entitlements */,
+				C24AA7EA217BCFF0002B6FF8 /* Util */,
 				C24AA7BF217BAAC7002B6FF8 /* AppDelegate.swift */,
 				C24AA7C5217BAAC7002B6FF8 /* Main.storyboard */,
 				C24AA7C8217BAAC8002B6FF8 /* Assets.xcassets */,
 				C24AA7CA217BAAC8002B6FF8 /* LaunchScreen.storyboard */,
 				C24AA7CD217BAAC8002B6FF8 /* Info.plist */,
+				C24AA7D3217BAD3E002B6FF8 /* brethren.entitlements */,
 			);
 			path = brethren;
 			sourceTree = "<group>";
@@ -144,6 +149,15 @@
 				C24AA7EB217BD05C002B6FF8 /* Http.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		C24AA7ED217BEE2F002B6FF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C24AA7EE217BEE57002B6FF8 /* User.swift */,
+				C24AA7F0217BEFDA002B6FF8 /* Pool.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +239,7 @@
 				C24AA7E0217BC12F002B6FF8 /* LoginChoiceController.swift in Sources */,
 				C24AA7DC217BBC39002B6FF8 /* PoolsTableCell.swift in Sources */,
 				C24AA7D9217BB520002B6FF8 /* LoginController.swift in Sources */,
+				C24AA7F1217BEFDA002B6FF8 /* Pool.swift in Sources */,
 				C24AA7E3217BC7DB002B6FF8 /* SettingsController.swift in Sources */,
 				C24AA7C0217BAAC7002B6FF8 /* AppDelegate.swift in Sources */,
 				C24AA7C2217BAAC7002B6FF8 /* PoolsTableController.swift in Sources */,
@@ -232,6 +247,7 @@
 				C24AA7E6217BCB8A002B6FF8 /* CreatePoolController.swift in Sources */,
 				C24AA7E9217BCD91002B6FF8 /* PoolDetailsController.swift in Sources */,
 				C24AA7EC217BD05C002B6FF8 /* Http.swift in Sources */,
+				C24AA7EF217BEE57002B6FF8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
