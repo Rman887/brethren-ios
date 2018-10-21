@@ -25,6 +25,7 @@
 		C24AA7F3217BF3A9002B6FF8 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F2217BF3A9002B6FF8 /* SettingsTableCell.swift */; };
 		C24AA7F7217C08DB002B6FF8 /* CreatePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F6217C08DB002B6FF8 /* CreatePasswordController.swift */; };
 		C24AA7F9217C14DA002B6FF8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F8217C14DA002B6FF8 /* Session.swift */; };
+		C24AA7FB217C4621002B6FF8 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7FA217C4621002B6FF8 /* UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C24AA7F2217BF3A9002B6FF8 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
 		C24AA7F6217C08DB002B6FF8 /* CreatePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordController.swift; sourceTree = "<group>"; };
 		C24AA7F8217C14DA002B6FF8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C24AA7FA217C4621002B6FF8 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,9 @@
 		C24AA7EA217BCFF0002B6FF8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				C24AA7F8217C14DA002B6FF8 /* Session.swift */,
 				C24AA7EB217BD05C002B6FF8 /* Http.swift */,
+				C24AA7FA217C4621002B6FF8 /* UI.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -164,7 +168,6 @@
 			children = (
 				C24AA7EE217BEE57002B6FF8 /* User.swift */,
 				C24AA7F0217BEFDA002B6FF8 /* Pool.swift */,
-				C24AA7F8217C14DA002B6FF8 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +198,9 @@
 		C24AA7B4217BAAC7002B6FF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+				);
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Cornelius and Co";
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C24AA7E0217BC12F002B6FF8 /* LoginChoiceController.swift in Sources */,
+				C24AA7FB217C4621002B6FF8 /* UI.swift in Sources */,
 				C24AA7DC217BBC39002B6FF8 /* PoolsTableCell.swift in Sources */,
 				C24AA7D9217BB520002B6FF8 /* LoginController.swift in Sources */,
 				C24AA7F1217BEFDA002B6FF8 /* Pool.swift in Sources */,
@@ -343,6 +350,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -397,7 +405,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};

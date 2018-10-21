@@ -9,8 +9,9 @@
 import Foundation
 
 
-class Http {
+public class Http {
     
+    /* Join a dictionary together as a string, separated with '&'. */
     public static func join(parameters: [String: String]) -> String {
         if parameters.isEmpty { return "" }
         var items = [String]()
@@ -18,7 +19,7 @@ class Http {
         return items.joined(separator: "&")
     }
     
-    /** Generate a POST request to a URL. */
+    /* Generate a POST request to a URL. */
     public static func post(url: String, parameters: [String: String]=[:]) -> URLRequest {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
@@ -26,14 +27,46 @@ class Http {
         return request
     }
     
-    /** Generate a GET request to a URL. */
+    /* Make a POST request. */
+    public static func postRequest(url: String, parameters: [String: String]=[:],
+                                   resolve: @escaping (_ string: String, _ response: HTTPURLResponse) -> Void,
+                                   reject: @escaping (_ error: Error?) -> Void) {
+        Requests.make(with: Http.post(url: url, parameters: parameters), resolve: resolve, reject: reject);
+    }
+    
+    /* Generate a PUT request to a URL. */
+    public static func put(url: String, parameters: [String: String]=[:]) -> URLRequest {
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "PUT"
+        request.httpBody = Http.join(parameters: parameters).data(using: .utf8)
+        return request
+    }
+    
+    public static func putRequest(url: String, parameters: [String: String]=[:],
+                                   resolve: @escaping (_ string: String, _ response: HTTPURLResponse) -> Void,
+                                   reject: @escaping (_ error: Error?) -> Void) {
+        Requests.make(with: Http.put(url: url, parameters: parameters), resolve: resolve, reject: reject);
+    }
+    
+    /* Generate a GET request to a URL. */
     public static func get(url: String, parameters: [String: String]=[:]) -> URLRequest {
         let get = Http.join(parameters: parameters)
-        var request = URLRequest(url: URL(string: url + "?" + get)!)
+        var urlStr = url
+        if (!get.isEmpty) {
+            urlStr += "?" + get
+        }
+        
+        var request = URLRequest(url: URL(string: urlStr)!)
         request.httpMethod = "GET"
         return request
     }
     
+    /* Make a GET request. */
+    public static func getRequest(url: String, parameters: [String: String]=[:],
+                                   resolve: @escaping (_ string: String, _ response: HTTPURLResponse) -> Void,
+                                   reject: @escaping (_ error: Error?) -> Void) {
+        Requests.make(with: Http.get(url: url, parameters: parameters), resolve: resolve, reject: reject);
+    }
 }
 
 

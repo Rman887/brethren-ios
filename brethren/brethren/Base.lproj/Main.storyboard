@@ -112,11 +112,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oc4-kH-XDM">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oc4-kH-XDM">
                                 <rect key="frame" x="16" y="288" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jm-u0-0eP">
                                 <rect key="frame" x="319" y="362" width="40" height="32"/>
@@ -126,6 +126,10 @@
                                     <action selector="login:" destination="gKb-yA-SS5" eventType="touchUpInside" id="7LR-f9-Nxu"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8dq-rE-g5x">
+                                <rect key="frame" x="282" y="368" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -145,8 +149,9 @@
                         <viewLayoutGuide key="safeArea" id="JJX-as-XxC"/>
                     </view>
                     <connections>
-                        <outlet property="password" destination="Oc4-kH-XDM" id="fu4-7w-CvX"/>
-                        <outlet property="username" destination="Gig-pH-Mb8" id="2Xf-Ok-M7R"/>
+                        <outlet property="activityIndicator" destination="8dq-rE-g5x" id="ehH-wA-2IH"/>
+                        <outlet property="passwordField" destination="Oc4-kH-XDM" id="1sO-Js-2X0"/>
+                        <outlet property="usernameField" destination="Gig-pH-Mb8" id="pRE-a8-pPv"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="LoginSuccess" id="13i-4S-x1s"/>
                     </connections>
                 </viewController>
@@ -237,7 +242,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBj-Xq-PCt">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBj-Xq-PCt">
                                 <rect key="frame" x="16" y="278" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -245,14 +250,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="given-name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6t-uc-WiK">
-                                <rect key="frame" x="197" y="243" width="94" height="24"/>
+                                <rect key="frame" x="197" y="246" width="94" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HID-pD-Esa">
-                                <rect key="frame" x="197" y="275" width="162" height="30"/>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HID-pD-Esa">
+                                <rect key="frame" x="197" y="278" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -265,7 +270,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5p-LK-vub">
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5p-LK-vub">
                                 <rect key="frame" x="16" y="368" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -300,11 +305,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="email" destination="l5p-LK-vub" id="eta-qI-Pof"/>
+                        <outlet property="emailField" destination="l5p-LK-vub" id="JhD-P2-wN4"/>
                         <outlet property="errorText" destination="sEg-jS-SLC" id="SVA-5g-lcw"/>
-                        <outlet property="firstName" destination="CBj-Xq-PCt" id="Qud-H8-oft"/>
-                        <outlet property="lastName" destination="HID-pD-Esa" id="nPK-HD-EwV"/>
-                        <outlet property="username" destination="aK8-kb-Pos" id="44w-3Y-lMi"/>
+                        <outlet property="firstNameField" destination="CBj-Xq-PCt" id="8QI-cd-Mn1"/>
+                        <outlet property="lastNameField" destination="HID-pD-Esa" id="x4l-br-3jW"/>
+                        <outlet property="usernameField" destination="aK8-kb-Pos" id="IAF-fg-2oa"/>
                         <segue destination="EOs-J8-WkP" kind="show" identifier="CreateUserSuccess" id="EEH-Gg-A9k"/>
                     </connections>
                 </viewController>
@@ -332,7 +337,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FZ-bN-bGF">
                                 <rect key="frame" x="16" y="304" width="159" height="24"/>
@@ -341,12 +346,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4q-eO-clP">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4q-eO-clP">
                                 <rect key="frame" x="16" y="333" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT0-90-mel">
                                 <rect key="frame" x="16" y="93" width="343" height="21"/>
@@ -370,9 +375,9 @@
                         <viewLayoutGuide key="safeArea" id="1sI-a8-lsU"/>
                     </view>
                     <connections>
-                        <outlet property="confirmPassword" destination="I4q-eO-clP" id="Wdh-ta-rvx"/>
+                        <outlet property="confirmPasswordField" destination="I4q-eO-clP" id="uVO-Lo-9CI"/>
                         <outlet property="errorText" destination="eT0-90-mel" id="Vul-qd-2sR"/>
-                        <outlet property="password" destination="geK-hB-e55" id="QGr-mS-jq9"/>
+                        <outlet property="passwordField" destination="geK-hB-e55" id="278-5s-8ov"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="CreatePassSuccess" id="nja-7U-bJg"/>
                     </connections>
                 </viewController>
