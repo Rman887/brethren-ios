@@ -10,25 +10,24 @@ import Foundation
 
 /* A user of the app. Holds account information. */
 public class User {
+    
     public let id: Int
     
     public var username: String
     public var firstName: String
     public var lastName: String
     public var email: String
-    public var phoneNumber: String
     public var karma: Int
     
     public var pools: [Pool]
     
     public init(id: Int, username: String, firstName: String, lastName: String, email: String,
-                phoneNumber: String, karma: Int, pools: [Pool]) {
+                karma: Int, pools: [Pool]) {
         self.id = id
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.phoneNumber = phoneNumber
         self.karma = karma
         self.pools = pools
     }
