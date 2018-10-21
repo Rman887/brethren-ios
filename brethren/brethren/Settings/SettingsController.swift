@@ -19,10 +19,50 @@ class SettingsController: UITableViewController {
     
     // MARK: - Navigation
     
-    @IBAction func logout(_ sender: Any) {
-        
+    @IBAction func cancel(_ sender: Any) {
+        DispatchQueue.main.async(execute: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
+    @IBAction func save(_ sender: Any) {
+        guard let user = Session.user else {
+            return
+        }
+        
+        let cells = self.tableView.visibleCells
+        for cell in cells {
+            let settingsTableCell = cell as! SettingsTableCell
+            if let fieldValue = settingsTableCell.fieldValue, let text = fieldValue.text {
+                if text.isEmpty {
+                    return
+                }
+            } else {
+                return
+            }
+        }
+        
+        for cell in cells {
+            let settingsTableCell = cell as! SettingsTableCell
+            let fieldValue = settingsTableCell.fieldValue!.text!
+            
+            switch settingsTableCell.fieldName!.text! {
+            case "First Name":
+                user.firstName = fieldValue
+            case "Last Name":
+                user.lastName = fieldValue
+            case "Email":
+                user.email = fieldValue
+            default:
+                continue
+            }
+        }
+        
+        /*DispatchQueue.main.async(execute: {
+            self.dismiss(animated: true, completion: nil)
+        })*/
+        self.performSegue(withIdentifier: "unwindToAccount", sender: self)
+    }
     // MARK: - Table functions
     
     /** Gets the number of sections on the table view. */
@@ -73,7 +113,7 @@ class SettingsController: UITableViewController {
     
     /** Return the height for the selected cell. */
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
     
     // MARK: - Navigation

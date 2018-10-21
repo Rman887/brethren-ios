@@ -30,8 +30,6 @@ public class Session {
         }, reject: { error in
             DispatchQueue.main.async { failure("Connection") }
         })
-        
-        Session.user = User(id: 1, username: "br0ther", firstName: "Bro", lastName: "Hoe", email: "brohoe123@vro.com", karma: 100, pools: [])
     }
     
     public static func createAccount(username: String, password: String,

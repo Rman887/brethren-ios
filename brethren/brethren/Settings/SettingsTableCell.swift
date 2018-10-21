@@ -12,7 +12,7 @@ class SettingsTableCell: UITableViewCell {
     
     @IBOutlet weak var fieldName: UILabel!
     @IBOutlet weak var fieldValue: UITextField!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
