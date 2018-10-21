@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UITableViewController {
+class PoolsTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

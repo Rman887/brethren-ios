@@ -101,7 +101,8 @@ class CreatePasswordController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func onCreateSuccess(_ response: String) {
+    private func onCreateSuccess(_ response: [String: Any]) {
+        print(response)
         self.performSegue(withIdentifier: "CreatePassSuccess", sender: self)
     }
     

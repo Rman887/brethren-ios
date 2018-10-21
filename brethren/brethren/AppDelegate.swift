@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Session.user = User(id: 1, username: "br0ther", firstName: "Bro", lastName: "Hoe", email: "brohoe123@vro.com", karma: 100, pools: [])
+        //Session.user = User(id: 1, username: "br0ther", firstName: "Bro", lastName: "Hoe", email: "brohoe123@vro.com", karma: 100, pools: [])
         return true
     }
 

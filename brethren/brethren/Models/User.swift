@@ -17,18 +17,16 @@ public class User {
     public var firstName: String
     public var lastName: String
     public var email: String
-    public var karma: Int
     
     public var pools: [Pool]
     
     public init(id: Int, username: String, firstName: String, lastName: String, email: String,
-                karma: Int, pools: [Pool]) {
+                pools: [Pool]) {
         self.id = id
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.karma = karma
         self.pools = pools
     }
 }

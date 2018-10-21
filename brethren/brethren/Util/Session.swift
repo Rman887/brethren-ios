@@ -8,16 +8,24 @@
 
 import Foundation
 
-public let baseURL = ""
+public let baseURL = "http://35.237.90.250"
 
-public let accountCreateURL = baseURL + ""
-public let loginURL = baseURL + ""
+public let accountCreateURL = baseURL + "/account/register/"
+public let loginURL = baseURL + "/account/login/"
+public let logoutURL = baseURL + ""
+
+public let userURL = baseURL + ""
+public let poolURL = baseURL + ""
+
+public let poolsForUserURL = baseURL + ""
+public let usersForPoolURL = baseURL + ""
 
 public class Session {
     public static var user: User? = nil
+    public static var authToken: String? = nil
     
     public static func performLogin(username: String, password: String,
-        success: @escaping (_ response: String) -> Void,
+        success: @escaping (_ response: [String: Any]) -> Void,
         failure: @escaping (_ error: String) -> Void
         ) {
 
@@ -25,8 +33,12 @@ public class Session {
             "username": username,
             "password": password
             ],
-        resolve: { string, response in
-            DispatchQueue.main.async { success(string) }
+        resolve: { data, response in
+            DispatchQueue.main.async {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                let object = json as? [String: Any]
+                success(object ?? [:])
+            }
         }, reject: { error in
             DispatchQueue.main.async { failure("Connection") }
         })
@@ -34,17 +46,25 @@ public class Session {
     
     public static func createAccount(username: String, password: String,
                                               email: String, firstName: String, lastName: String,
-                                              success: @escaping (_ response: String) -> Void,
+                                              success: @escaping (_ response: [String: Any]) -> Void,
                                               failure: @escaping (_ error: String) -> Void) {
         Http.postRequest(url: accountCreateURL, parameters: [
             "username": username,
-            "firstName": firstName,
-            "lastName": lastName,
+            "first_name": firstName,
+            "last_name": lastName,
             "email": email,
-            "password": password
+            "password1": password,
+            "password2": password
             ],
-        resolve: { string, response in
-            DispatchQueue.main.async { success(string) }
+        resolve: { data, response in
+            DispatchQueue.main.async {
+                var string = String(data: data, encoding: .utf8)!
+                print("====")
+                print(string)
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                let object = json as? [String: Any]
+                success(object ?? [:])
+            }
         }, reject: { error in
             DispatchQueue.main.async { failure("Connection") }
         })

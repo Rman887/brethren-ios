@@ -82,11 +82,14 @@ class LoginController: UIViewController, UITextFieldDelegate {
         Session.performLogin(username: username, password: password, success: onLoginSuccess, failure: onLoginFailure)
     }
     
-    private func onLoginSuccess(_ response: String) {
+    private func onLoginSuccess(_ response: [String: Any]) {
+        Session.authToken = response["token"] as? String
+        Session.user = User(id: response["id"] as! Int, username: response["username"] as! String, firstName: response["first_name"] as! String, lastName: response["last_name"] as! String, email: response["email"] as! String, pools: [])
         self.performSegue(withIdentifier: "LoginSuccess", sender: self)
     }
     
     private func onLoginFailure(_ error: String) {
-        
+        print("=====ERROR====LOL=====")
+        print(error)
     }
 }
