@@ -26,7 +26,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
         passwordField.tag = 1
         passwordField.delegate = self
         passwordField.tag = 2
-        // Do any additional setup after loading the view.
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.isHidden = true
     }
     
     // MARK: - Editting
@@ -74,7 +76,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         let username = self.usernameField.text ?? ""
         let password = self.passwordField.text ?? ""
         
-        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         
         Session.performLogin(username: username, password: password, success: onLoginSuccess, failure: onLoginFailure)

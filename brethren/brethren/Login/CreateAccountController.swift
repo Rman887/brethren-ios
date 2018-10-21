@@ -17,7 +17,9 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var errorText: UILabel!
     
-    private var activeField: UITextField?;
+    private var activeField: UITextField?
+    
+    private var isError: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         lastNameField.tag = 3
         emailField.delegate = self
         emailField.tag = 4
+        
+        self.errorText.isHidden = true
     }
     
     private func validateInfo() -> Bool {
@@ -66,6 +70,26 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     /* Update the active text field. */
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeField = nil
+        
+        guard let firstNameText = self.firstNameField.text else { return }
+        guard let lastNameText = self.lastNameField.text else { return }
+        guard let emailText = self.emailField.text else { return }
+        self.isError = false
+        
+        if !firstNameText.isEmpty && !isOnlyLetters(str: firstNameText) {
+            self.isError = true
+            self.errorText.text = "First name can only include letters."
+        }
+        if !lastNameText.isEmpty && !isOnlyLetters(str: lastNameText) {
+            self.isError = true
+            self.errorText.text = "Last name can only include letters."
+        }
+        if !emailText.isEmpty && !emailText.contains("@") {
+            self.isError = true
+            self.errorText.text = "Must enter a valid email address."
+        }
+        
+        self.errorText.isHidden = !self.isError
     }
     
     // MARK: - Navigation

@@ -20,6 +20,7 @@ class CreatePasswordController: UIViewController, UITextFieldDelegate {
     public var email: String?
     
     public var activeField: UITextField?
+    private var isError: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class CreatePasswordController: UIViewController, UITextFieldDelegate {
     }
     
     private func validatePassword() -> String? {
+        if isError { return nil }
+        
         if let text = self.passwordField.text, let confirmText = self.confirmPasswordField.text {
             if !text.isEmpty && text == confirmText {
                 return text
@@ -70,6 +73,17 @@ class CreatePasswordController: UIViewController, UITextFieldDelegate {
     /* Update the active text field. */
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeField = nil
+        
+        guard let passText = self.passwordField.text else { return }
+        guard let confirmText = self.confirmPasswordField.text else { return }
+        self.isError = false
+        
+        if !passText.isEmpty && !confirmText.isEmpty && passText != confirmText {
+            self.isError = true
+            self.errorText.text = "Passwords don't match!"
+        }
+        
+        self.errorText.isHidden = !self.isError
     }
     
     // MARK: - Login

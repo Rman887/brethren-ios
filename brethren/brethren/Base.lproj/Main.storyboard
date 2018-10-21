@@ -382,7 +382,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create new account"/>
                                 <connections>
-                                    <action selector="createAccount:" destination="EOs-J8-WkP" eventType="touchUpInside" id="muE-zq-0FY"/>
+                                    <action selector="createAccount:" destination="EOs-J8-WkP" eventType="touchUpInside" id="Z9I-c7-NvG"/>
                                     <action selector="next:" destination="QNQ-N0-L8Z" eventType="touchUpInside" id="unX-bc-Szg"/>
                                 </connections>
                             </button>

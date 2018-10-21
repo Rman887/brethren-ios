@@ -26,7 +26,7 @@
 		C24AA7F3217BF3A9002B6FF8 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F2217BF3A9002B6FF8 /* SettingsTableCell.swift */; };
 		C24AA7F7217C08DB002B6FF8 /* CreatePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F6217C08DB002B6FF8 /* CreatePasswordController.swift */; };
 		C24AA7F9217C14DA002B6FF8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7F8217C14DA002B6FF8 /* Session.swift */; };
-		C24AA7FB217C4621002B6FF8 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7FA217C4621002B6FF8 /* UI.swift */; };
+		C24AA7FB217C4621002B6FF8 /* UtiI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA7FA217C4621002B6FF8 /* UtiI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 		C24AA7F2217BF3A9002B6FF8 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
 		C24AA7F6217C08DB002B6FF8 /* CreatePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordController.swift; sourceTree = "<group>"; };
 		C24AA7F8217C14DA002B6FF8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		C24AA7FA217C4621002B6FF8 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		C24AA7FA217C4621002B6FF8 /* UtiI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtiI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 			children = (
 				C24AA7F8217C14DA002B6FF8 /* Session.swift */,
 				C24AA7EB217BD05C002B6FF8 /* Http.swift */,
-				C24AA7FA217C4621002B6FF8 /* UI.swift */,
+				C24AA7FA217C4621002B6FF8 /* UtiI.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C24AA7E0217BC12F002B6FF8 /* LoginChoiceController.swift in Sources */,
-				C24AA7FB217C4621002B6FF8 /* UI.swift in Sources */,
+				C24AA7FB217C4621002B6FF8 /* UtiI.swift in Sources */,
 				C24AA7DC217BBC39002B6FF8 /* PoolsTableCell.swift in Sources */,
 				C24AA7D9217BB520002B6FF8 /* LoginController.swift in Sources */,
 				C211B6F2217C5C4F00ADC9A8 /* AccountController.swift in Sources */,
